@@ -51,7 +51,22 @@ this, the initialization step also includes the initialization of the velocity o
 solutions to 0. The initialization occurs only once per run.
 
 ### STEP 2: CALCULATION OF FITNESS VALUE AND MASS OF THE SOLUTIONS
-Evaluate the fitness value of each solution based on its feasibility and objective function value. Calculate the mass of each solution.
+After the initialization step, the program calculates the fitness value for each of the solutions
+in the population. The fitness function used calculates the total value of the mutants in a
+solution. The higher the value, the fitter the solution. After the calculation of the fitness
+function of each solution, the best and worst solutions are each stored in a variable. This is
+then used to calculate the mass of each of the solutions. The mass is calculated by the
+formula:
+
+![Example Image](images/knapsack.png)
+
+The above equation gives the mass of each individual solution. After calculating the mass for
+every solution, the inertial mass of each solution is found using the formula:
+
+![Example Image](images/knapsack.png)
+
+The program stores the inertial masses in a list with indices of the masses matching that of
+the corresponding solution in the population list.
 
 ### STEP 3: CALCULATION OF FORCE ON THE MASSES
 Calculate the gravitational force acting on each solution based on its mass and the distance between solutions.
