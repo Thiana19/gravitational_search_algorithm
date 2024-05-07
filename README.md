@@ -58,12 +58,12 @@ function of each solution, the best and worst solutions are each stored in a var
 then used to calculate the mass of each of the solutions. The mass is calculated by the
 formula:
 
-![Example Image](images/knapsack.png)
+![Example Image](images/fitness.png)
 
 The above equation gives the mass of each individual solution. After calculating the mass for
 every solution, the inertial mass of each solution is found using the formula:
 
-![Example Image](images/knapsack.png)
+![Example Image](images/mass.png)
 
 The program stores the inertial masses in a list with indices of the masses matching that of
 the corresponding solution in the population list.
