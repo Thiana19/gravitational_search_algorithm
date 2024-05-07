@@ -138,7 +138,7 @@ done, the program shows the highest value solution that was obtained during the 
 In the evaluation section, we present the results of applying the Gravitational Search Algorithm to solve the Knapsack Problem. We provide the outcomes of two trial runs:
 
 ### Trial 1
-population_size (N) = 100
+population_size (N) = 100, 
 max_iter = 200
 
 ![Example Image](images/trial1.png)
@@ -152,7 +152,7 @@ combination that was outputted by the program:
 
 
 ### Trial 2
-population_size (N) = 200
+population_size (N) = 200, 
 max_iter = 50
 
 ![Example Image](images/trial2.png)
