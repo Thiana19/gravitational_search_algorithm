@@ -83,7 +83,7 @@ To calculate the gravitational constant 𝐺, the following formula is used:
 
 ![Example Image](images/constant.png)
 
-Here, 𝜏represents a constant that is reduced every generation to improve the search
+Here, 𝜏 represents a constant that is reduced every generation to improve the search
 accuracy and 𝑔represents the current generation number. 𝑔𝑚𝑎𝑥is the maximum number of
 generation or iteration that the algorithm will be running for. 𝐺
 0
