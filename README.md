@@ -100,23 +100,76 @@ The program stores the calculated force in a list, just like masses previously.
 
 
 ### STEP 4: CALCULATION OF ACCELERATION
-Calculate the acceleration of each solution based on the gravitational force acting on it.
+The acceleration of an agent i is calculated by the equation:
+
+![Example Image](images/acceleration.png)
+
+This value is calculated for every solution in the list and stored in a list
 
 ### STEP 5: UPDATING VELOCITY
-Update the velocity of each solution based on its current velocity and acceleration.
+The velocity of the solutions are updated with a newer velocity that is found using the
+formula:
+
+![Example Image](images/velocity.png)
+
+Here, u stands for initial velocity, i.e. the velocity before the update and rand is a random float
+value between 0 and 1. 𝑎 is the acceleration of the corresponding solution.
+
 
 ### STEP 6: UPDATING POSITION
-Update the position of each solution based on its current position and velocity.
+The position is updated in binary gravitational search using a probability function that
+depends on the velocity of the solution. Updating position here means updating the bitmap
+of a solution. The bits are complemented depending upon the probability function:
+
+![Example Image](images/position.png)
+
+The position update function can be represented as:
+
+![Example Image](images/update.png)
+
+This means that the position is updated only if the random value generated is less than the
+probability function calculated for the solution.
+The updated position creates a new bitmap and is used to create a new population. Steps 2-
+6 are repeated for the number of iterations defined in the program. After the iterations are
+done, the program shows the highest value solution that was obtained during the run.
+
 
 ## D- EVALUATION
 In the evaluation section, we present the results of applying the Gravitational Search Algorithm to solve the Knapsack Problem. We provide the outcomes of two trial runs:
 
 ### Trial 1
-Describe the setup and results of the first trial.
+population_size (N) = 100
+max_iter = 200
+
+![Example Image](images/trial1.png)
+
+The above graph shows the convergence plot for the run with the above parameter. The graph
+converges at a solution with a total mutant value of 1116 in the 58th generation. This was the
+combination that was outputted by the program:
+8
+[[45.0, 2.0], [92.0, 8.0], [44.0, 4.0], [65.0, 8.0], [77.0, 1.0], [66.0, 2.0], [56.0, 0.0], [99.0, 5.0],
+[72.0, 5.0], [89.0, 0.0], [60.0, 2.0], [51.0, 1.0], [87.0, 5.0], [63.0, 6.0], [88.0, 6.0], [62.0, 2.0]]
+
 
 ### Trial 2
-Describe the setup and results of the second trial.
+population_size (N) = 200
+max_iter = 50
+
+![Example Image](images/trial2.png)
+
+Running the program with the above parameters results in the GSA algorithm converging at
+1056. The convergence takes place in the 18th generation. The combination associated with
+the value is:
+[[92.0, 8.0], [44.0, 4.0], [85.0, 9.0], [77.0, 1.0], [66.0, 2.0], [45.0, 8.0], [99.0, 5.0], [72.0, 5.0],
+[89.0, 0.0], [91.0, 3.0], [45.0, 1.0], [51.0, 1.0], [0.0, 2.0], [87.0, 5.0], [62.0, 2.0], [51.0, 9.0]]
+
 
 ## E- CONCLUSION
-In conclusion, the Gravitational Search Algorithm shows promise in solving the Knapsack Problem efficiently by leveraging the principles of gravity and motion. Further experimentation and optimization can potentially improve its performance and applicability in various real-world scenarios.
+In summary, we acknowledge that our modified Gravitational Search Algorithm does not
+provide the optimal solution given by this assignment, but it is near enough. This is a proof
+of how far our understanding of this gravity inspired method goes. However, the goal of
+most optimization algorithms is to compare a multitude of solutions until a satisfactory
+solution is found after a certain number of iterations. From the diagrams above, the more
+the number of iterations, the longer it takes to compute the task and the more our
+algorithm is accurate.
 
