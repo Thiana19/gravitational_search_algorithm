@@ -69,7 +69,35 @@ The program stores the inertial masses in a list with indices of the masses matc
 the corresponding solution in the population list.
 
 ### STEP 3: CALCULATION OF FORCE ON THE MASSES
-Calculate the gravitational force acting on each solution based on its mass and the distance between solutions.
+The force acting on the masses is the driving mechanism of GSA. The gravitational force acting
+between two masses i and j is given by:
+
+![Example Image](images/force.png)
+
+In the above equation, 𝑀𝑖and 𝑀𝑗
+represent the inertial masses of agents i and j and 𝑅
+represents the hamiltonian distance between i and j, whereas 𝜖 is a small constant added to
+prevent division by zero. 𝑋𝑖 and 𝑋𝑗
+represent the position of the agents i and j respectively.
+To calculate the gravitational constant 𝐺, the following formula is used:
+
+![Example Image](images/constant.png)
+
+Here, 𝜏represents a constant that is reduced every generation to improve the search
+accuracy and 𝑔represents the current generation number. 𝑔𝑚𝑎𝑥is the maximum number of
+generation or iteration that the algorithm will be running for. 𝐺
+0
+is a constant set to 1.
+After the forces on each solution by the other solutions in the population are calculated the
+total force on a solution is found by the formula:
+
+![Example Image](images/totalforce.png)
+
+Kbest is a list that contains the best solution in the generations and it’s size decreases linearly
+every generation. rand is a random floating point number between 0 and 1 added in the
+equation to give the algorithm a stochastic behaviour.
+The program stores the calculated force in a list, just like masses previously.
+
 
 ### STEP 4: CALCULATION OF ACCELERATION
 Calculate the acceleration of each solution based on the gravitational force acting on it.
